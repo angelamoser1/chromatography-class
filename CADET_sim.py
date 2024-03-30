@@ -1,13 +1,19 @@
 # -*- coding: utf-8 -*-
 """
 This script contains the CADET simulation code for
-the protein A bind and elute CADET model.
+the 3 component step elution CADET model.
 
-Protein A operations (load, wash, elution, strip) are simulated using 
-CADET software.
 CADET License: https://cadet.github.io/v4.3.0/license.html
 
 This script is the front-end for the CADET simulation software
+      
+Copyright (C) 2008-2022: The CADET Authors
+           Please see the AUTHORS and CONTRIBUTORS file.
+  
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the GNU Public License v3.0 (or, at
+your option, any later version) which accompanies this distribution, and
+is available at http://www.gnu.org/licenses/gpl.html
 """
 import platform
 from cadet import Cadet
@@ -209,15 +215,3 @@ def run_cadet_sim(ms):
    sim_solution = model.root.output.solution
    return sim_solution
 
-
-'''
-CADET
-      
-Copyright (C) 2008-2022: The CADET Authors
-           Please see the AUTHORS and CONTRIBUTORS file.
-  
-All rights reserved. This program and the accompanying materials
-are made available under the terms of the GNU Public License v3.0 (or, at
-your option, any later version) which accompanies this distribution, and
-is available at http://www.gnu.org/licenses/gpl.html
-'''
