@@ -70,13 +70,6 @@ def create_ms(run_conditions):
     # choose the x axis for output plots
     # xaxis_plot_set = run_conditions['x axis']
     xaxis_plot_set = 'CV'
-
-    # Computational inputs
-    n_threads = 4   # [-], Number of CPU threads (max is 2*CPU cores), increases simulation speed
-    abstol = 1e-6   # usually 1e-6. absolute tolerance for error during time integration
-    reltol = 1e-6   # usually 1e-6. relative tolerance for error during time integration
-    axial_nodes = 50    # [1/cm], Number of axial discretization nodes - # PER 2.5 cm OF COLUMN!!
-    particle_nodes = 25    # [-], Number of particle discretization nodes
                              
     # [1/s], Adsorption rate constant
     k_kin = [1e8] * (len(protein_MWs)) 
@@ -196,11 +189,6 @@ def create_ms(run_conditions):
     ms['r_hyd'] = R_hyd 
     ms['k_kin'] = k_kin 
 
-    ms['n_threads'] = n_threads
-    ms['abstol'] = abstol
-    ms['reltol'] = reltol
-    ms['axial_nodes'] = axial_nodes 
-    ms['particle_nodes'] = particle_nodes
     ms['HUV'] = HUV
     
     ms['load_CV'] = load_CV
