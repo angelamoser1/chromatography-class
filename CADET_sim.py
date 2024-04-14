@@ -116,8 +116,8 @@ def run_cadet_sim(ms):
 
    ## Discretization
    ### Grid cells
-   model.root.input.model.unit_002.discretization.ncol = ms['axial_nodes']
-   model.root.input.model.unit_002.discretization.npar = ms['particle_nodes']
+   model.root.input.model.unit_002.discretization.ncol = 50
+   model.root.input.model.unit_002.discretization.npar = 20
 
    ### Bound states
    model.root.input.model.unit_002.discretization.nbound = [1] + [1 for c in ms['feed_conc']]
@@ -146,7 +146,7 @@ def run_cadet_sim(ms):
    model.root.input.solver.sections.section_times = [0.0, ms['load_time'], ms['wash_time'], ms['step1_time'], ms['step2_time'], ms['step3_time']]   # s
    model.root.input.solver.sections.section_continuity = [0, 0, 0, 0, 0]
    
-   # units: inlet > Column > Outlet
+   # units: inlet > CSTR > Column > Outlet
 
    # Switches
    model.root.input.model.connections.nswitches = 1
@@ -166,7 +166,7 @@ def run_cadet_sim(ms):
    model.root.input.model.solver.schur_safety = 1e-8
 
    # Number of cores for parallel simulation
-   model.root.input.solver.nthreads = 1
+   model.root.input.solver.nthreads = 2
 
    # Tolerances for the time integrator
    model.root.input.solver.time_integrator.abstol = 1e-6       # usually 1e-6
